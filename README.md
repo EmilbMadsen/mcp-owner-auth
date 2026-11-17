@@ -78,3 +78,10 @@ Then `my-mcp auth init` (username, password, TOTP QR code, prints the client ID 
 ## License
 
 Apache-2.0
+
+## Releasing
+
+Releases go to PyPI from GitHub Actions with trusted publishing (no API token anywhere). Bump
+`version` in `pyproject.toml`, commit, then push a matching tag (`git tag v0.1.1 && git push
+origin v0.1.1`). One-time setup on pypi.org: a trusted publisher for project `mcp-owner-auth`,
+owner `EmilbMadsen`, repository `mcp-owner-auth`, workflow `release.yml`, environment `pypi`.
