@@ -32,7 +32,8 @@ storage. No cryptography is implemented here: secrets come from `secrets`, hashi
 - `redirect_uri` must match the allowlist exactly. Default: `https://claude.ai/api/mcp/auth_callback`
   (change with `auth init --redirect-uri ...`).
 - The token endpoint accepts `client_secret_post` and `client_secret_basic` (both advertised in
-  the metadata). Sending both at once is rejected. Unknown client and wrong secret give the same
+  the metadata). claude.ai uses `client_secret_post` (observed November 2026); the
+  method used is logged at INFO for every token request. Sending both at once is rejected. Unknown client and wrong secret give the same
   `invalid_client` answer.
 
 ### Flow
